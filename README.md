@@ -1,6 +1,6 @@
 # CS 3338 Final Project - Group 11 - Project Mirage
 
-Jira Project URL: 
+Jira Project URL: https://calstatela-cs3338-fall25-g11.atlassian.net/jira/software/c/projects/CGFP/summary
 
 ### **Team:**
 - Matthew Moc
