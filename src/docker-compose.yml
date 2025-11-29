@@ -1,0 +1,32 @@
+version: "3.0"
+
+services:
+  frontend:
+    build: ./frontend
+    dockerfile: Dockerfile
+    ports:
+      "3000:3000"
+    volumes: 
+    - ./frontend:/app
+    - frontend_node_volume:/frontend/node_modules
+    environment:
+    - NODE_ENV=development
+    depends_on:
+    - backend
+    networks:
+    - app-network
+  backend:
+    build: ./backend
+    ports:
+      "5000:5000"
+    volumes:
+    - ./backend:/backend
+    - backend_node_volume:/backend/node_modules
+    environment:
+    - NODE_ENV=production
+    networks:
+    - app_network
+  networks:
+    app-network:
+      driver: bridge
+
