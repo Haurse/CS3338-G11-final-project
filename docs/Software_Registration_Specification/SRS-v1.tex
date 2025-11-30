@@ -1,0 +1,86 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Software Requirement Specification}
+\lhead{Group {11}}
+\cfoot{\thepage}
+
+\begin{document}
+
+% Cover Page
+\begin{titlepage}
+\centering
+{\Huge \textbf{Software Requirement Specification (SRS)}\\[1.5cm]}
+{\Large Team Name: Agustin, Matthew, Damian, Miguel, and Charles\\[0.5cm]}
+{\Large Group Number: {11}\\[0.5cm]}
+{\Large Date: \today}
+\end{titlepage}
+
+% Table of Contents
+\tableofcontents
+\newpage
+
+% Version Description
+\section*{Version Description}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\textbf{Version} & \textbf{Description} & \textbf{Date Added} \\ \hline
+1.0 & Initial release for Snapshot 1 & \today \\ \hline
+\end{tabularx}
+\newpage
+
+% Introduction
+\section{Introduction}
+\subsection{Purpose}
+The main purpose of a Software Requirement Specification document is to serve as a detailed, structured guide that describes a software system's purpose, features, and requirements, acting as a blueprint for development and a contract between stakeholders. It will minimize misunderstandings by providing a single source of truth for what the software must do, and it will also ensure the final product meets business and user needs.
+
+\subsection{Intended Audience}
+The primary audiences for an SRS document are diverse, including technical team members such as developers and testers, project management staff, and non-technical stakeholders such as clients, end users, and leadership. For this document to reach this broad audience, the document needs to be clear, well-structured, and to define terms appropriately so that everyone can understand the project's requirements.
+
+\subsection{Overview}
+The software "Project Mirage" is a command-line utility designed for organizing, processing, and culling photos and videos. The software organizes photos and videos from specified directories and their sub-directories. It supports multiple file formats, including JPEG, PNG, HEIC/HEIF, MP4, and MOV.
+
+% External Interface Requirements
+\section{External Interface Requirements}
+\subsection{User Interface}
+Users will interact with the Project Mirage software via a CLI. The software is run as a Python utility, where users execute specific commands and provide arguments to control its operations. 
+\begin{itemize}
+    \item The users will launch the program from a terminal or command prompt, and it will invoke different functionalities such as organizing files, detecting duplicates, or performing aesthetic assessment.
+    \item Users specify input directories, desired output configurations (like sorting by date), and other operational parameters using various flags and arguments within the command.
+    \item A key interactive feature is the ability to perform a "dry run". This allows users to preview the exact changes the software would make to their files and directories without actually implementing them, enabling confirmation before committing to any permanent modifications.
+    \item The system provides feedback in the console, informing the user about the files processed, duplicates found, and the actions taken (or proposed, during a dry run).
+\end{itemize}
+
+\subsection{Software Interfaces}
+Discuss APIs, external systems, and other relevant topics.
+
+% Legal and Ethical Considerations
+\section{Legal and Ethical Considerations}
+\subsection{Data Storage and Privacy}
+Explain data handling and protection.
+
+\subsection{Ethical Issues}
+Address consent, bias, misuse, and other relevant issues.
+
+% Glossary
+\section{Glossary}
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Acronym} & \textbf{Definition} \\ \hline
+SRS & Software Requirement Specification \\ \hline
+JPEG & Joint Photographic Experts Group \\ \hline
+PNG & Portable Network Graphics \\ \hline
+HEIC & High Efficiency Image Container \\ \hline
+HEIF & High Efficiency Image File Format \\ \hline
+MP4 & MPEG-4 Part 14 \\ \hline
+MOV & QuickTime Multimedia \\ \hline
+CLI & Command-line Interface \\ \hline
+\end{tabularx}
+
+\end{document}
