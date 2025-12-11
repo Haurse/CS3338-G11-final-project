@@ -1,31 +1,157 @@
 \documentclass{article}
 \usepackage{geometry,indentfirst,fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
 
+<<<<<<< HEAD
 \title{Snapshot Objectives}
 \author{Agustin Liscano, Charles Lopez, Damian Bonds, Matthew Moc, Miguel Vasquez-Naranjo}
 \date{November 28, 2025}
+=======
+% Page Setup
+>>>>>>> 2c23f2f1c5a4772e68a0d1241026e08ca90484f7
 \geometry{a4paper, margin=1in}
 \pagestyle{fancy}
-\fancyhead[C]{Snapshot Objectives}
+\fancyhead{}
+\fancyfoot{}
 \fancyfoot[C]{\thepage}
 
-\begin{document}
-\maketitle
+\title{Snapshot Document}
+\author{Agustin Liscano \\ Charles Lopez \\ Damian Bond \\ Matthew Moc \\ Miguel Vasquez-Naranjo}
+\date{December 10, 2025}
 
-\section{Start Objective}
+\begin{document}
+
+% TITLE PAGE
+
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% TABLE OF CONTENTS (Page 2)
+
+\pagenumbering{roman}
+\tableofcontents
+\thispagestyle{plain}
+\clearpage
+
+% Begin main content pages
+
+\pagenumbering{arabic}
+
+% SNAPSHOT 1
+
+\section{Start Snapshot 1 - Sprints 1-4}
 Our start objective covers what we want to accomplish in the first 4 months of our project. So far we have decided what base dependencies we need.
 
 With 5 members we will split up the work evenly among the features we want to add. At the end of this snapshot we hope to have our base features working, which include the chatbot up/running and integration with Microsoft Teams
 To do this we will need to:
 \begin{itemize}
-\item Create a Copilot agent in Copilot Studio
-\item Create a backend using Microsoft PowerApps
-\item Be able to store data in SharePoint Lists and Smartsheet
-\item Integrate our Copilot agent with Microsoft Teams
+    \item Create a Copilot agent in Copilot Studio
+    \item Create a backend using Microsoft PowerApps
+    \item Be able to store data in SharePoint Lists and Smartsheet
+    \item Integrate our Copilot agent with Microsoft Teams
 \end{itemize}
-\section{Checkpoint 1}
 
-\section{Checkpoint 2}
+\clearpage
 
-\section{Final Checkpoint}
+% SNAPSHOT 2
+
+\section{Snapshot 2 - Sprints 5-7}
+Snapshot 2 focused on implementing core ticketing functionality, stablilizing data flows, and ensuring that Anya could reliably communicate with PDHelpDesk, SharePoint, and Teams.
+
+\subsection*{Major Accomplishments}
+
+\subsubsection*{Intergration with PDHelpDesk}
+We fully integrated Anya with the PDHelpDesk APT, allowing IT support tickets to be automatically created and stored. This established a foundational workflow between Copilot Studio and backend ticketing system.
+
+\subsubsection*{SharePoint Ticket Storage Implementation}
+We completed the initial SharePoint List schema design and connected PowerApps so tickets could be saved directly into SharePoint. Early issues where tickets were not saving correctly were identified and resolved.
+
+\subsubsection*{Fixes to Ticket Creation Relibility}
+We resolved several issues involving:
+\begin{itemize}
+    \item Tickets not being created properly.
+    \item Tickets not being saved.
+\end{itemize}
+
+\subsubsection*{Initial Ticket Tracking Setup}
+We laid the groundwork for Anya to retrieve and display ticket information through adpative cards. This prepared the system for full status tracking in later sprints.
+
+\clearpage
+
+% SNAPSHOT 3
+
+\section{Snapshot 3 - Sprints 8-10}
+Snapshot 3 introduced new system capabilities beyond ticket creation, including ticket update retrieval, feedback submission, and administrative workflows such as time-off requests.
+
+\subsection*{Major Accomplishments}
+
+\subsubsection*{Ticket Feedback with Adaptive Cards}
+We created an interactive feedback system where users can rate IT ticket handling. A major issue preventing feedback submissions was diagnosed and fixed.
+
+\subsubsection*{Ticket Update Notifcations}
+We added functionality to:
+\begin{itemize}
+    \item Retrieve current ticket status.
+    \item Display update history.
+    \item Notify users when changes occur.
+\end{itemize}
+
+\subsubsection*{Time-Off Request Automation}
+We implemented a workflow where Anya can:
+\begin{itemize}
+    \item Submit time-off requests.
+    \item Route requests through PDGo.
+    \item Store them in SharePoint and Smartsheet.
+\end{itemize}
+Several bugs involving time-off requests not saving or showing incorrect information were resolved.
+
+\subsubsection*{Multi-Platform Integration}
+The assistant now communicated across multiple systems, expanding functionality into administrative and HR workflows.
+
+\clearpage
+
+% SNAPSHOT 4
+
+\section{Final Snapshot 4 - Sprints 11-12}
+Snapshot 4 implemented advanced system features incolving logging, search tools, and user tracking. These additions increase reliability, maintainabilty, and the intelligence of Anya.
+
+\subsection*{Major Accoplishments}
+
+\subsubsection*{MCLE Logging System}
+We impemented a full logging pipeline that:
+\begin{itemize}
+    \item Submits MCLE logs automatically.
+    \item Stores logs in SharePoint or Smartsheet.
+    \item Validates and verifies logged data.
+\end{itemize}
+
+\subsubsection*{File and Document Search System}
+A major feature addition allows Anya to:
+\begin{itemize}
+    \item Search SharePoint and Smartsheet.
+    \item Filter results by permissions.
+    \item Return the correct file and summary.
+\end{itemize}
+
+\subsubsection*{User Tracking and Session Management}
+Anya now logs:
+\begin{itemize}
+    \item User identification.
+    \item Timestamps.
+    \item Types of actions taken.
+\end{itemize}
+
+\subsubsection*{ACcurate User Linking}
+We implemented user association mapping via LDAP and Teams profile data. This ensured tickets and requests are tied to the correct user.
+
+\subsubsection*{Enhanced Error Handling}
+We improved conversational robustness so Anya can properly respond to:
+\begin{itemize}
+    \item Unknown commands.
+    \item Incorrectily formatted requests.
+    \item Out-ofscope queries.
+\end{itemize}
+
 \end{document}
