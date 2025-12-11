@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\usepackage{geometry,indentfirst,fancyhdr}
+
+\title{Design Spec}
+\author{Agustin Liscano, Charles Lopez, Damian Bonds, Matthew Moc, Miguel Vasquez-Naranjo}
+\date{December 5, 2025}
+\geometry{a4paper, margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Design Spec}
+\lhead{Group {11}}
+\cfoot{\thepage}
+
+
+\begin{document}
+
+\maketitle
+
+This document outlines the breakdown of the pages, parts, tools, packages, dependencies, and libraries required for Project Mirage, an AI-powered assistant named Anya designed to streamline IT support, administrative workflows, file retrieval, translation, document automation, and internal communications. Anya is built using a modular architecture, with components interacting via secure API communications, primarily orchestrated through PowerApps and Copilot Studio.
+
+
+\section{User Interface}
+The entire user experience is contained within a single conversational interface in a Teams chat.
+\begin{itemize}
+    \item Main Chat Interface: The primary interaction canvas where users type requests and Anya responds.
+    \item Adaptive Card Components: Dynamically generated UI elements used for specific actions (e.g., submitting a time-off request, displaying a ticket status, viewing file search results).
+\end{itemize}
+
+
+\section{Core Subsystems \& Logic Handlers}
+These components manage the logic and communication flows.
+\begin{itemize}
+    \item ChatHandler: The primary entry point for user input.
+    Utilizes Copilot Studio's NLP engine to interpret user intent (e.g., "submit ticket," "search file," "translate"). Directs the intent to the appropriate manager/handler.
+    \item TicketManager (IT Support): Manages interactions with the "PDHelpDesk" system (built on SharePoint).
+    Handles ticket submission forms (Adaptive Cards), status lookups, updates, and administrative actions (reassign, resolve).
+    \item AdminRequestManager (Admin Workflows): Manages interactions with the "PDGo" system (built on Smartsheet).
+    Manages flows for time-off requests, MCLE logging, and general admin submissions via Power Automate workflows triggered by Adaptive Card submissions.
+    \item FileRetriever: Handles search queries across knowledge bases.
+    Executes keyword-based and metadata-aware searches in SharePoint document libraries and Smartsheet databases. Returns formatted results as Adaptive Cards with direct links.
+    \item Contact Lookup (Office 365 Integration):
+    Searches the Office 365 directory for staff contact information (name, title, contact details).
+    \item Translation Engine:
+    Sends text snippets or entire documents to a translation service (Azure AI/Cognitive Services via Power Automate) and returns translated content.
+    \item Document Generator (Fillable Forms):
+    Manages selection of templates, populates fields based on user input, generates final documents (e.g., PDF/DOCX), and stores the output.
+    \item SessionLogger:
+    Tracks all user actions, intents, and system responses for auditing, troubleshooting, and compliance purposes, storing logs in a dedicated SharePoint list or database.
+\end{itemize}
+
+\section{Data Services Layer \& Storage}
+\begin{itemize}
+    \item Secure API Communication: All communication between Power Platform components and external data sources (SharePoint, Smartsheet, O365) uses built-in, secure Microsoft connectors and APIs.
+    \item Storage Platforms:
+    \begin{itemize}
+        \item SharePoint: Used for IT ticketing system (PDHelpDesk), document storage (file retrieval), session logs, and document metadata.
+        \item Smartsheet: Used for administrative workflows (PDGo).
+    \end{itemize}
+\end{itemize}
+
+
+\section*{Packages}
+\begin{itemize}
+    \item \textbf{axios} or \textbf{node-fetch}: For making HTTP requests to external APIs (SharePoint, Smartsheet, Power Automate endpoints). 
+    \item \textbf{dotenv}: For managing environment variables (API keys, connection strings) within the Docker environment.
+\end{itemize}
+
+\section*{Dependencies}
+
+Anya is primarily built using Microsoft SaaS/PaaS offerings, which abstracts most traditional software library/package management. The execution environment (Docker container) primarily needs a base image capable of hosting potential custom connectors or authentication proxies, although the base design relies solely on managed cloud services.
+
+\begin{itemize}
+    \item Base Image: mcr.microsoft.com (for a C\# API) or python:3.10-slim (for a Python API).
+    \item Microsoft.SharePoint.Client (if using CSOM externally)
+    \item Smartsheet.Api (for complex external Smartsheet interactions)
+    \item Azure.AI.TextAnalytics (if calling Azure services outside of Power Automate)
+\end{itemize}
+
+
+\section*{Libraries}
+\begin{itemize}
+    \item \textbf{@microsoft/teams-ai}: Core library for building conversational AI apps in Teams.
+    \item \textbf{botbuilder-js}: Microsoft Bot Framework libraries for basic bot functionality.
+    \item \textbf{smartsheet-api} (or similar SDK): Specific client library for Smartsheet interactions.
+    \item \textbf{sharepoint-rest-api} (if not using MS Graph): Libraries to interact with SharePoint data.
+    \item \textbf{@microsoft/microsoft-graph-client}: For accessing Office 365 contact information. 
+\end{itemize}
+
+
+\end{document}
