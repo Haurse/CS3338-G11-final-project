@@ -1,0 +1,163 @@
+\documentclass[12pt]{article}
+
+%---------------- Packages ----------------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{longtable}
+
+\title{Project Mirage\\[0.5em]
+\large Formal Objective Breakdown, System Goals, and Access Instructions}
+\author{Group {11}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\newpage
+
+%==================================================
+\section{Formal Objective Breakdown}
+%==================================================
+
+Project Mirage aims to deliver \textbf{Anya}, a virtual assistant integrated into Microsoft Teams for the 
+Santa Barbara Public Defender's Office (SBPD). The system centralizes complex and frequently used 
+workflows such as IT support ticketing, administrative requests, file retrieval, and staff directory lookups.
+The objective is to reduce friction, eliminate repetitive manual tasks, and unify access to multiple existing
+SBPD tools through a single conversational interface.
+
+The formal objectives are as follows:
+
+\begin{enumerate}
+    \item \textbf{Provide a unified point of access}: Ensure that users no longer need to navigate multiple 
+          applications (PDHelpDesk, PDGo, SharePoint) individually.
+    \item \textbf{Streamline ticket and request creation}: Reduce time spent on routine IT and 
+          administrative tasks.
+    \item \textbf{Improve information discoverability}: Allow users to search for files and staff contacts 
+          through natural language queries inside Teams.
+    \item \textbf{Maintain compatibility with existing systems}: Integrate seamlessly with SBPD’s current 
+          Microsoft 365 ecosystem without requiring new infrastructure.
+    \item \textbf{Enhance accuracy and consistency}: Minimize user error through guided prompts, 
+          structured data collection, and automation.
+    \item \textbf{Support future extensibility}: Provide a foundation for additional workflows and 
+          enhancements beyond Snapshot~1.
+\end{enumerate}
+
+%==================================================
+\section{Goals and Rationale (Why the System Is Needed)}
+%==================================================
+
+SBPD staff currently rely on several independent tools for daily operations. These tools are functional but 
+disconnected, requiring users to remember which system handles which task and how to navigate its 
+interface. This fragmentation increases cognitive load, slows down workflows, and contributes to 
+inconsistency in record creation.
+
+Project Mirage addresses these issues directly. The system is needed for the following reasons:
+
+\subsection{Operational Efficiency}
+Staff frequently submit IT tickets, administrative requests, and file searches. Consolidating these actions 
+into a single conversational interface measurably reduces the time required to complete essential tasks.
+
+\subsection{Ease of Use}
+Many users are already familiar with Microsoft Teams. Embedding Anya within Teams removes the need 
+for training on multiple applications and makes the assistant available in the same workspace used for 
+daily communication.
+
+\subsection{Reduction of Errors}
+By structuring workflows through automated prompts, the system prevents incomplete or incorrectly 
+formatted submissions, improving data quality and decreasing the need for follow-up corrections.
+
+\subsection{Improved Information Access}
+Legal staff often need rapid access to files, templates, directories, and policy documents. Natural 
+language file search reduces the time spent digging through SharePoint hierarchies.
+
+\subsection{Centralization of Support}
+Users are no longer required to determine which system contains the function they need. Mirage 
+automatically routes requests to the correct back-end service.
+
+\subsection{Alignment With SBPD Digital Modernization Efforts}
+Mirage demonstrates how low-code and AI-based tools can enhance workflow automation without 
+requiring extensive redevelopment of existing infrastructure.
+
+%==================================================
+\section{How to Download, Access, or Use the System}
+%==================================================
+
+Anya is deployed fully within the Microsoft 365 environment and does not require manual installation.
+Access is controlled through the SBPD Teams tenant and associated security permissions.
+
+\subsection{Access Requirements}
+\begin{itemize}
+    \item An active SBPD Microsoft 365 account.
+    \item Access to Microsoft Teams (desktop or web).
+    \item Inclusion within the Teams environment where Anya is deployed.
+\end{itemize}
+
+\subsection{Steps to Access Anya in Microsoft Teams}
+\begin{enumerate}
+    \item Open \textbf{Microsoft Teams}.
+    \item Navigate to the \textbf{Team} or \textbf{Channel} where Anya is installed.  
+          For example: \textbf{SBPD -- Mirage Testing Channel}.
+    \item In the chat input box, type a message such as: \\
+          \textit{``Hello Anya''} or \textit{``I need help''}.
+    \item Anya will respond with a greeting and optional suggestions for available commands.
+    \item Users may begin issuing natural language instructions such as:
+    \begin{itemize}
+        \item \textit{``Create an IT ticket.''}
+        \item \textit{``I want to request time off next Friday.''}
+        \item \textit{``Find the HR manual.''}
+        \item \textit{``Look up contact information for John Smith.''}
+    \end{itemize}
+\end{enumerate}
+
+\subsection{No Local Installation Required}
+Project Mirage does not include a downloadable application. All components---including Copilot logic, 
+Power Automate flows, and PowerApps integrations---are hosted within the Microsoft 365 cloud 
+platform. Users automatically receive updates as new features are deployed.
+
+\subsection{Developer / Administrator Access}
+For teams maintaining or extending Mirage:
+
+\begin{itemize}
+    \item Logic flows are accessed through \textbf{Power Automate}.
+    \item Conversation design is available in \textbf{Copilot Studio}.
+    \item Back-end data is managed through \textbf{PowerApps}, \textbf{SharePoint lists}, or 
+          \textbf{Smartsheet}.
+\end{itemize}
+
+Proper permissions are required to modify any component.
+
+%==================================================
+\section{System Benefits Summary}
+%==================================================
+
+Project Mirage provides measurable improvements to SBPD operations:
+
+\begin{itemize}
+    \item Faster IT and administrative request handling.
+    \item Fewer user errors in ticket and request submissions.
+    \item Simplified access to organizational knowledge and file repositories.
+    \item Unified workflow management through a single assistant.
+    \item Immediate compatibility with Microsoft 365 without new hardware.
+    \item Reduced training overhead for new staff.
+\end{itemize}
+
+These benefits support SBPD’s mission by allowing staff to focus on legal work rather than navigating 
+multiple administrative systems.
+
+%==================================================
+\section{References}
+%==================================================
+
+\begin{itemize}
+    \item Microsoft Teams documentation: \url{https://learn.microsoft.com/microsoftteams/}
+    \item Microsoft PowerApps documentation: \url{https://learn.microsoft.com/power-apps/}
+    \item Microsoft Copilot Studio documentation: \url{https://learn.microsoft.com/microsoft-copilot-studio/}
+    \item Project Mirage SRS and SDD reference documents.
+\end{itemize}
+
+\end{document}
