@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+\title{CS 3338 Final Project\\TestRail Snapshot Reports}
+\author{Group 11}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+%=========================================================
+\section{Snapshot 2 -- TestRail Documentation}
+%=========================================================
+
+\subsection{Objective}
+Snapshot 2 focused on validating the initial core features of our Copilot integration:
+time-off request workflows, basic Copilot updates, and the Adaptive Card feedback
+mechanism. The goal was to confirm that user-facing flows behaved as expected and that
+early integrations with backend components could be exercised in a controlled environment.
+
+\subsection{Test Run Information}
+\begin{itemize}
+  \item TestRail Project: CS3338-G11-final-project
+  \item Test Run Name: Snapshot 2 Test Run
+  \item Date Executed: \textit{[fill in]}
+\end{itemize}
+
+\subsection{Related Jira Issues}
+CGFP-20, CGFP-21,
+CGFP-23, CGFP-24, CGFP-25,
+CGFP-26, CGFP-27, CGFP-28, CGFP-29
+
+\subsection{Test Cases Included}
+\begin{itemize}
+  \item TC-01 Submit Time-Off Request via Copilot
+  \item TC-02 Time-Off Request Validation \& Save
+  \item TC-03 Time-Off Request Display
+  \item TC-08 Ticket Updates Display and Persist
+  \item TC-09 Feedback Adaptive Card Loads
+  \item TC-10 Feedback Submission \& Storage
+  \item TC-12 Backend Connectivity \& Error Handling
+\end{itemize}
+
+\subsection{Summary}
+Snapshot 2 established the foundation for user interaction by testing time-off submission,
+feedback mechanisms, and early data-handling behaviors. These tests provided insight into
+which components were stable and which required refinement heading into Snapshot 3.
+
+\newpage
+
+%=========================================================
+\section{Snapshot 3 -- TestRail Documentation}
+%=========================================================
+
+\subsection{Objective}
+Snapshot 3 targeted the mid-stage functionality of the system, including IT ticket creation,
+ticket storage, ticket tracking, and logging. This phase ensured data persisted correctly
+across systems and validated Copilot’s ability to retrieve and summarize ticket information.
+
+\subsection{Test Run Information}
+\begin{itemize}
+  \item TestRail Project: CS3338-G11-final-project
+  \item Test Run Name: Snapshot 3 Test Run
+  \item Date Executed: \textit{[fill in]}
+\end{itemize}
+
+\subsection{Related Jira Issues}
+CGFP-7, CGFP-8, CGFP-9,
+CGFP-10, CGFP-11, CGFP-13,
+CGFP-14, CGFP-15, CGFP-16, CGFP-17,
+CGFP-18, CGFP-19, CGFP-22,
+CGFP-30, CGFP-31, CGFP-32,
+CGFP-36
+
+\subsection{Test Cases Included}
+\begin{itemize}
+  \item TC-04 Create IT Ticket via Copilot
+  \item TC-05 Save IT Ticket to SharePoint / PDHelpDesk
+  \item TC-06 Ticket Save Failure Handling
+  \item TC-07 Track IT Ticket in Copilot
+  \item TC-08 Ticket Updates Display and Persist
+  \item TC-11 MCLE Logging for Key Actions
+  \item TC-12 Backend Connectivity \& Error Handling
+  \item TC-18 End-to-End Happy Path Scenario
+\end{itemize}
+
+\subsection{Summary}
+Snapshot 3 expanded system coverage to include backend persistence, ticket data reliability,
+and operational logging. These tests confirmed interactions between Copilot and external
+systems, setting the stage for the refinement tasks addressed in Snapshot 4.
+
+\newpage
+
+%=========================================================
+\section{Snapshot 4 -- TestRail Documentation}
+%=========================================================
+
+\subsection{Objective}
+Snapshot 4 served as the final integration phase, focusing on user tracking, record linkage,
+file retrieval behavior, error handling for invalid commands, and full regression testing
+across the system.
+
+\subsection{Test Run Information}
+\begin{itemize}
+  \item TestRail Project: CS3338-G11-final-project
+  \item Test Run Name: Snapshot 4 Test Run
+  \item Date Executed: \textit{[fill in]}
+\end{itemize}
+
+\subsection{Related Jira Issues}
+CGFP-33, CGFP-34,
+CGFP-35, CGFP-36, CGFP-37, CGFP-38,
+CGFP-39,
+CGFP-10, CGFP-11, CGFP-13
+
+\subsection{Test Cases Included}
+\begin{itemize}
+  \item TC-13 User Tracking for Actions
+  \item TC-14 Correct User Linked to Tickets/Requests
+  \item TC-15 File / Document Search
+  \item TC-16 Incorrect File Retrieval Handling
+  \item TC-17 Handle Incorrect or Unsupported Commands
+  \item TC-18 End-to-End Happy Path Scenario
+  \item [Optional] TC-01 or TC-04 for regression
+\end{itemize}
+
+\subsection{Summary}
+Snapshot 4 ensured that the system behaved consistently under realistic usage patterns by
+testing user attribution, file retrieval accuracy, command validation, and final system-wide
+integration. These tests represent the final quality assessment for the project.
+
+\end{document}
